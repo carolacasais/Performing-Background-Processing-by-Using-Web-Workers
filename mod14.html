@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 14: Performing Background Processing by Using Web Workers</title>
+</head>
+<body>
+    <h1>Module 14: Performing Background Processing by Using Web Workers</h1>
+    <h2>Lesson 2: Performing Asynchronous Processing by Using Web Workers</h2>
+    <h3>Demonstration: Creating a Web Worker Process</h3>
+
+    <h4>Start without debugging and drag "mark-hanson-large.jpg" to Internet Explorer 
+        and drop it on the canvas with the label "Drag your profile photo here". </h4>
+        <img src="images/img1.png" width="1000" height="500"/>
+
+        <h4>In "Solution Explorer", expand the "ContosoConf" project, expand the "scripts" folder, 
+            and then double-click "grayscale-worker.js".<br/>
+            In the "Code Editor" window, explain that the event handler at the top of the file waits for a message 
+            containing a color image. The event handler then calls the "grayscalePixel()" function to convert each pixel 
+            in the image to grayscale, and then posts a message with that grayscale image data.</h4>
+            <img src="images/img2.png" width="1000" height="500"/>
+
+        <h4>In "Solution Explorer", double-click "grayscale.js".<br/>
+            In the "Code Editor" window, find the "grayscaleImage()" function. Explain that this 
+            function creates a web worker that runs the "grayscale-worker.js" script, and posts a 
+            message to the web worker that contains the data for the image that the user dropped onto 
+            the canvas on the form. This function also arranges to catch the message that the web worker 
+            posts back, containing the grayscale version of the image, which is displayed on the canvas on the web page.<br/>
+            Point out that the code that sets up the message handler for the web worker uses "bind(this)" to ensure 
+            that the anonymous function that handles the event is resolved to the web page and not the web worker variable.
+        </h4>
+        <img src="images/img3.png" width="1000" height="500"/>
+</body>
+</html>
